@@ -6,7 +6,7 @@ Building or installing from source will need the standard Rust toolchain install
 
 # Features
 
-At present this program will take a port as an argment and check to see if that port is open on localhost.
+Will scan ports within the specified range on localhost
 
 ## Building
 
@@ -18,5 +18,5 @@ At present this program will take a port as an argment and check to see if that 
 
 ## Running
 
-`cargo run -- {port_to_check}`
+`cargo run -- --from {port_from} --to {port_to}` 
 
