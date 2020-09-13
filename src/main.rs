@@ -16,8 +16,14 @@ const IP_ADDRESS: &str =  "127.0.0.1";
 fn main() -> Result<()>  {
     let args = Cli::from_args();
     let scan_range = std::ops::Range { start: args.from, end: args.to };
+    println!("{:10}|{:5}|{}", "port", "open", "service");
+    println!("{:-<25}","");
+
     for p in scan_range {
-        println!("Port {} is open: {}", p, is_port_open(IP_ADDRESS, p)) ;
+        let is_open = is_port_open(IP_ADDRESS, p);
+        if is_open {
+            println!("{:<10}|{:5}|{}", p, is_open, "NA");
+        }
     }
     
    
